@@ -1,0 +1,16 @@
+h5 { /*internal css*/
+    color:blueviolet;
+    background:antiquewhite;
+    font-size:20px;
+    font-weight:bolder;
+    font-style:oblique;
+    text-decoration:underline;
+    text-align:center;
+    text-decoration-color:brown;
+    text-underline-offset:10px;
+    border:red 2px solid;
+    /* border-color:red;
+    border-width:2px;
+    border-style:solid; */
+    cursor:pointer;
+}

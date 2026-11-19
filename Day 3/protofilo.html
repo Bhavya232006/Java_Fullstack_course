@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bhavya Portfolio</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #f3f6fb;
+            color: #222;
+        }
+
+        /* Navigation */
+        header {
+            background: #1e293b;
+            padding: 10px 5%;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        nav h2 {
+            color: #60a5fa;
+            font-size: 20px;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 20px;
+        }
+
+        nav ul a {
+            color: white;
+            text-decoration: none;
+            font-size: 13px;
+        }
+
+        nav ul a:hover {
+            color: #60a5fa;
+        }
+
+        /* Main */
+        .container {
+            width: 92%;
+            max-width: 1150px;
+            margin: 12px auto;
+        }
+
+        /* Hero */
+        .hero {
+            background: white;
+            text-align: center;
+            padding: 18px 25px;
+            border-radius: 10px;
+            margin-bottom: 12px;
+        }
+
+        .hero h1 {
+            font-size: 31px;
+            color: #1e293b;
+        }
+
+        .hero h1 span {
+            color: #2563eb;
+        }
+
+        .hero h3 {
+            font-size: 16px;
+            margin: 4px 0;
+            color: #444;
+        }
+
+        .hero p {
+            font-size: 12px;
+            color: #666;
+        }
+
+        .btn {
+            display: inline-block;
+            background: #2563eb;
+            color: white;
+            text-decoration: none;
+            padding: 7px 18px;
+            border-radius: 5px;
+            margin-top: 8px;
+            font-size: 12px;
+        }
+
+        /* Grid */
+        .grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+        }
+
+        .card {
+            background: white;
+            padding: 14px 18px;
+            border-radius: 9px;
+        }
+
+        .card h2 {
+            font-size: 19px;
+            color: #1e293b;
+            border-bottom: 2px solid #2563eb;
+            padding-bottom: 4px;
+            margin-bottom: 7px;
+        }
+
+        .card p {
+            font-size: 11.5px;
+            line-height: 1.45;
+            color: #555;
+        }
+
+        /* Skills */
+        .skills {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 7px;
+        }
+
+        .skill {
+            background: #dbeafe;
+            padding: 7px;
+            border-radius: 5px;
+            text-align: center;
+        }
+
+        .skill strong {
+            display: block;
+            color: #1e40af;
+            font-size: 11px;
+        }
+
+        .skill small {
+            font-size: 9px;
+            color: #555;
+        }
+
+        /* Projects */
+        .project {
+            padding: 7px 9px;
+            margin-bottom: 6px;
+            border-left: 3px solid #2563eb;
+            background: #f8fafc;
+        }
+
+        .project h3 {
+            color: #2563eb;
+            font-size: 12px;
+            margin-bottom: 2px;
+        }
+
+        .project p {
+            font-size: 10px;
+        }
+
+        /* Education */
+        .education-item {
+            margin-bottom: 6px;
+        }
+
+        .education-item strong {
+            color: #2563eb;
+            font-size: 12px;
+        }
+
+        .education-item p {
+            font-size: 10px;
+        }
+
+        /* Contact */
+        .contact p {
+            margin: 5px 0;
+            font-size: 11px;
+        }
+
+        .contact a {
+            color: #2563eb;
+            text-decoration: none;
+        }
+
+        /* Career */
+        .career {
+            background: #eef2ff;
+            margin-top: 12px;
+            padding: 10px 15px;
+            border-radius: 9px;
+        }
+
+        .career h2 {
+            font-size: 16px;
+            margin-bottom: 3px;
+            color: #1e293b;
+        }
+
+        .career p {
+            font-size: 10.5px;
+            line-height: 1.4;
+        }
+
+        /* AI Reflection */
+        .reflection {
+            background: #e0e7ff;
+            margin-top: 10px;
+            padding: 9px 15px;
+            border-radius: 9px;
+        }
+
+        .reflection h2 {
+            font-size: 16px;
+            margin-bottom: 3px;
+            color: #1e293b;
+        }
+
+        .reflection p {
+            font-size: 10px;
+            line-height: 1.4;
+        }
+
+        /* Footer */
+        footer {
+            background: #1e293b;
+            color: white;
+            text-align: center;
+            padding: 7px;
+            margin-top: 10px;
+            font-size: 10px;
+        }
+
+        /* Mobile */
+        @media (max-width: 700px) {
+
+            nav {
+                flex-direction: column;
+                gap: 8px;
+            }
+
+            nav ul {
+                gap: 10px;
+            }
+
+            .grid {
+                grid-template-columns: 1fr;
+            }
+
+            .skills {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <header>
+        <nav>
+            <h2>Bhavya's Portfolio</h2>
+
+            <ul>
+                <li><a href="#about">About</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#education">Education</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+
+    <div class="container">
+
+        <!-- Hero Section -->
+        <section class="hero">
+            <h1>Hello, I'm <span>Bhavya</span></h1>
+
+            <h3>Computer Science Student | Beginner Web Developer</h3>
+
+            <p>
+                I am passionate about programming, web development,
+                problem solving and creating simple technology solutions.
+            </p>
+
+            <a href="#contact" class="btn">Contact Me</a>
+        </section>
+
+
+        <div class="grid">
+
+            <!-- About -->
+            <section class="card" id="about">
+                <h2>About Me</h2>
+
+                <p>
+                    I am a Computer Science student with a strong interest
+                    in programming and web development. I enjoy learning
+                    new technologies and applying my knowledge through
+                    practical projects. I am interested in creating
+                    user-friendly and meaningful digital solutions.
+                    I also enjoy solving programming problems and
+                    continuously improving my technical skills.
+                </p>
+            </section>
+
+
+            <!-- Skills -->
+            <section class="card" id="skills">
+                <h2>My Skills</h2>
+
+                <div class="skills">
+
+                    <div class="skill">
+                        <strong>HTML</strong>
+                        <small>Web Structure</small>
+                    </div>
+
+                    <div class="skill">
+                        <strong>CSS</strong>
+                        <small>Web Design</small>
+                    </div>
+
+                    <div class="skill">
+                        <strong>Java</strong>
+                        <small>Programming</small>
+                    </div>
+
+                    <div class="skill">
+                        <strong>Python</strong>
+                        <small>Programming</small>
+                    </div>
+
+                    <div class="skill">
+                        <strong>C</strong>
+                        <small>Programming</small>
+                    </div>
+
+                    <div class="skill">
+                        <strong>Problem Solving</strong>
+                        <small>Logical Thinking</small>
+                    </div>
+
+                </div>
+            </section>
+
+
+            <!-- Projects -->
+            <section class="card" id="projects">
+                <h2>My Projects</h2>
+
+                <div class="project">
+                    <h3>1. CampusConnect</h3>
+                    <p>
+                        A student platform for sharing campus resources,
+                        notes, announcements and academic information.
+                    </p>
+                </div>
+
+                <div class="project">
+                    <h3>2. AI Study Planner</h3>
+                    <p>
+                        A study planning application that helps students
+                        organize subjects, tasks and study schedules.
+                    </p>
+                </div>
+
+                <div class="project">
+                    <h3>3. Automatic Question Paper Generator</h3>
+                    <p>
+                        A system that generates question papers from
+                        uploaded study notes while maintaining a proper
+                        question paper structure.
+                    </p>
+                </div>
+            </section>
+
+
+            <!-- Education -->
+            <section class="card" id="education">
+                <h2>Education</h2>
+
+                <div class="education-item">
+                    <strong>Bachelor of Engineering - CSE</strong>
+                    <p>
+                        Computer Science and Engineering
+                    </p>
+                </div>
+
+                <div class="education-item">
+                    <strong>Technical Interests</strong>
+                    <p>
+                        Web Development, Java, Python, DSA and Artificial
+                        Intelligence.
+                    </p>
+                </div>
+
+                <div class="education-item">
+                    <strong>Learning Approach</strong>
+                    <p>
+                        Learn concepts, practice coding and build
+                        real-world projects.
+                    </p>
+                </div>
+            </section>
+
+
+            <!-- Contact -->
+            <section class="card contact" id="contact">
+                <h2>Contact Me</h2>
+
+                <p>
+                    <strong>Email:</strong>
+                    <a href="mailto:bhavya@example.com">
+                        bhavya@example.com
+                    </a>
+                </p>
+
+                <p>
+                    <strong>Phone:</strong> +91 XXXXX XXXXX
+                </p>
+
+                <p>
+                    <strong>Location:</strong> India
+                </p>
+
+                <p>
+                    <strong>Availability:</strong> Open to learning
+                    opportunities and projects
+                </p>
+            </section>
+
+
+            <!-- Career Goal -->
+            <section class="card">
+                <h2>Career Goal</h2>
+
+                <p>
+                    My goal is to become a skilled software professional
+                    with strong programming and problem-solving abilities.
+                    I want to gain practical experience, work on innovative
+                    projects and use technology to create useful solutions.
+                </p>
+            </section>
+
+        </div>
+
+
+        <!-- AI Reflection -->
+        <section class="reflection">
+            <h2>AI Use Reflection</h2>
+
+            <p>
+                I used AI in three meaningful ways during this project.
+                First, I used AI to plan the portfolio structure and
+                decide the order of sections. Second, I used AI to draft
+                and improve content for the About, Skills and Projects
+                sections. Third, I used AI suggestions to improve the
+                clarity, layout and flow of the final webpage. I reviewed
+                the suggestions and manually edited the content, personal
+                information and HTML before completing the portfolio.
+            </p>
+        </section>
+
+    </div>
+
+
+    <footer>
+        © 2026 Bhavya | AI-Assisted Portfolio
+    </footer>
+
+</body>
+</html>
