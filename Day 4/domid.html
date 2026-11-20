@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Domid</title>
+</head>
+<body>
+    <h1 id="greeting">Hello, World!</h1>
+    <p class="value">Hello</p>
+    <p class="value">Welcome</p>
+    <p>Hello</p>
+    <p>Welcome</p>
+    <h1 class="intro">First Paragraph</h1>
+    <h1 class="intro">second Paragraph</h1>
+
+    <script>
+        let a=document.getElementById("greeting");
+        a.innerHTML="<h2>Hello, Java!</h2>";
+
+        let b=document.getElementsByClassName("value");
+        b[0].innerHTML="<h2>Hi</h2>";
+
+        let c=document.getElementsByTagName("p");
+        c[2].innerHTML="<h2>Everyone</h2>";
+
+        let d=document.querySelector(".intro");
+        d.innerHTML="<h2>updated first Paragraph</h2>";
+
+        let e=document.querySelectorAll(".intro");
+        e[1].innerHTML="<h2>updated second Paragraph</h2>";
+
+    </script>
+</body>
+</html>
